@@ -17,6 +17,12 @@ maintainer:          saifzia.work@gmail.com
 build-type:          Simple
 extra-source-files:  CHANGELOG.md
 
+library 
+  hs-source-dirs:    src
+  exposed-modules:   Lib
+  build-depends:     base >=4.13 && <4.14
+  default-language:  Haskell2010
+
 executable orion
   main-is:             Main.hs
   -- other-modules:
@@ -24,3 +30,14 @@ executable orion
   build-depends:       base >=4.13 && <4.14
   hs-source-dirs:      app
   default-language:    Haskell2010
+
+test-suite orion-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base >=4.13 && <4.14
+  default-language:    Haskell2010
+
+  source-repository head
+    type:        git
+    location: https://github.com/mDSaifZia/orion
